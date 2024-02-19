@@ -5,11 +5,11 @@
 }
 
 html {
-  font-family: sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 18px;
-  line-height: 1.5;
+  line-height: 22px;
   font-weight: 400;
-  color: black;
+  color: #262c27;
 }
 
 body {
@@ -21,11 +21,342 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+  line-height: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .container {
-  width: 100%;
-  max-width: 1000px;
+  max-width: 1230px;
   margin: 0 auto;
+  padding: 0 15px;
 }
 
+.header {
+  background-image: url(../images/header-bg.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+  position: relative;
+  margin-bottom: 80px;
+
+  &__top {
+    display: flex;
+    align-items: center;
+    padding: 57px 0;
+    gap: 100px;
+    justify-content: flex-end;
+    font-family: "Comfortaa", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 22px;
+
+    .logo path {
+      transition: fill 0.3s ease;
+    }
+
+    .logo:hover path {
+      fill: #0093a1;
+    }
+  }
+
+  &__btn {
+    color: rgb(255, 255, 255);
+    font-family: "Comfortaa", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 22px;
+    padding: 12px 71px;
+    background: rgb(38, 44, 39);
+    border: none;
+    cursor: pointer;
+  }
+
+  &__content {
+    position: relative;
+    min-height: calc(100vh - 161px);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    text-transform: uppercase;
+
+    &-box {
+      color: #ffffff;
+      max-width: 550px;
+      text-align: center;
+      margin-right: 30px;
+      font-family: "Comfortaa", sans-serif;
+      font-weight: 700;
+
+      .header__title {
+        font-size: 64px;
+        line-height: 71px;
+        margin-bottom: 20px;
+      }
+
+      .header__text {
+        font-size: 24px;
+        line-height: 27px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__decor-text {
+    position: absolute;
+    bottom: 10px;
+    color: #0093a1;
+    text-transform: uppercase;
+    font-family: "Comfortaa", sans-serif;
+
+    &--1 {
+      z-index: 1;
+      right: 145px;
+      bottom: 100px;
+    }
+
+    &--1,
+    &--2 {
+      font-size: 130px;
+      font-weight: 400;
+      line-height: 145px;
+      opacity: 0.3;
+    }
+
+    &--2 {
+      z-index: 4;
+      left: 265px;
+      bottom: -25px;
+    }
+
+    &--3 {
+      max-width: 360px;
+      font-size: 32px;
+      font-weight: 300;
+      line-height: 39px;
+      text-align: center;
+      z-index: 4;
+      right: 145px;
+      font-style: italic;
+    }
+  }
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  background-image: url(../images/header-decor.svg);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 456px;
+  transform: translateY(35%);
+  z-index: 2;
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  background-image: url(../images/header-decor.svg);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 456px;
+  transform: translateY(75%) rotate(180deg);
+  z-index: 3;
+}
+
+.info {
+  background-image: url(../images/info-bg.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+
+  &__top {
+    display: flex;
+    gap: 80px;
+    padding-top: 100px;
+    margin-bottom: 65vh;
+
+    &-text {
+      padding-top: 245px;
+      max-width: 290px;
+      color: #ffffff;
+      position: relative;
+
+      &--two {
+        border-bottom: 1px solid #fff;
+      }
+
+      &--one {
+        padding-bottom: 125px;
+      }
+    }
+
+    &-img {
+      position: relative;
+      z-index: 6;
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  &__specs {
+    display: flex;
+    align-items: center;
+    gap: 160px;
+    text-transform: uppercase;
+    color: #fff;
+    padding-bottom: 50px;
+
+    &-title {
+      font-size: 60px;
+      line-height: 67px;
+      font-family: "Comfortaa", sans-serif;
+      width: 250px;
+    }
+
+    &-list {
+      border-top: 1px solid #fff;
+      border-bottom: 1px solid #fff;
+      padding: 30px 0 15px;
+      max-width: 565px;
+      font-weight: 700;
+    }
+
+    &-item {
+      margin-bottom: 15px;
+      display: flex;
+      gap: 25px;
+    }
+
+    &-caption {
+      width: 175px;
+    }
+  }
+}
+
+.popup-btn {
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+
+  span {
+    display: block;
+    padding-top: 12px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 22px;
+  }
+}
+
+.info::before {
+  content: "";
+  position: absolute;
+  height: 130px;
+  background-color: #262c27;
+  left: 0;
+  right: 0;
+  top: 0;
+  transform: translateY(-120px);
+  z-index: 1;
+}
+
+.buy {
+  padding: 150px 0;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    gap: 90px;
+  }
+
+  &-content {
+    width: 510px;
+    position: relative;
+  }
+
+  &__price {
+    position: absolute;
+    right: 0;
+    bottom: 130px;
+    width: 201px;
+    height: 199px;
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 42;
+    background-image: url(../images/star.svg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__title {
+    font-family: "Comfortaa", sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    font-size: 60px;
+    line-height: 67px;
+    color: #0093a1;
+  }
+
+  &__list {
+    margin-bottom: 50px;
+  }
+
+  &__item {
+    margin-bottom: 25px;
+    max-width: 285px;
+    &-title {
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+      transition: color 0.3s ease;
+    }
+  }
+
+  &__item:hover .buy__item-title {
+    color: #0093a1;
+  }
+
+  &__btn {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 45px;
+    font-family: "Comfortaa", sans-serif;
+    text-transform: uppercase;
+    color: #0093a1;
+    padding: 18px;
+    width: 100%;
+    max-width: 484px;
+    background-color: transparent;
+    border: 2px solid #0093a1;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+  }
+
+  &__btn:hover {
+    background-color: #b9c400;
+    border-color: transparent;
+    color: #262c27;
+  }
+}
